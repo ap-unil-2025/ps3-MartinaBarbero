@@ -53,11 +53,6 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True,
     for _ in range(length - n_types):
         password.append(secrets.choice(characters))
 
-    for pool in pools:
-        password.append(secrets.choice(pool))
-    for _ in range(length - n_types):
-        password.append(secrets.choice(characters))
-
     random.shuffle(password)
 
     return ''.join(password)
