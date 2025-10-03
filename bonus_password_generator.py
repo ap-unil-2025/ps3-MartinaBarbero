@@ -42,7 +42,16 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True,
     n_types= len (pools)
     if length < n_types :
         length = n_types
+
+    n_types = len (pools)
+    if lenght < n_types :
+        lenght = n_types
     password = []
+
+    for pool in pools:
+        password.append(secrets.choice(pool))
+    for _ in range(length - n_types):
+        password.append(secrets.choice(characters))
 
     for pool in pools:
         password.append(secrets.choice(pool))
