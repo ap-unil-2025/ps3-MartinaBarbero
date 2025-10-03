@@ -28,7 +28,7 @@ def fahrenheit_to_celsius(fahrenheit):
         float: Temperature in Celsius
     """
     return (fahrenheit - 32) * 5/9
-    
+
 
 
 def temperature_converter():
@@ -41,7 +41,7 @@ def temperature_converter():
     """
     print("Temperature Converter")
     print("-" * 30)
-    
+
     try:
         value = float(input("Enter temperature value: ").strip())
         unit = input("Current unit (C or F): ").strip().lower()
@@ -59,7 +59,7 @@ def temperature_converter():
 
     except ValueError:
         print(" temperature value. Please enter a number.")
-        
+
 
 # Test cases (DO NOT MODIFY)
 if __name__ == "__main__":
