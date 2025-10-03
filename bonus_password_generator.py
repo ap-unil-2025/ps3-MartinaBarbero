@@ -5,7 +5,7 @@ Generate secure passwords with customizable options.
 
 import random
 import string
-
+import secrets
 
 def generate_password(length=12, use_uppercase=True, use_lowercase=True,
                      use_digits=True, use_special=True):
@@ -23,7 +23,6 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True,
         str: Generated password
     """
     characters = ""
-    import secrets                   
     pools = []
     if use_lowercase:
         characters += string.ascii_lowercase
@@ -41,10 +40,10 @@ def generate_password(length=12, use_uppercase=True, use_lowercase=True,
     if not characters:
         return "Error: No character types selected!"
     n_types= len (pools)
-    if lenght < n_types :
-        lenght = n_types
+    if length < n_types :
+        length = n_types
     password = []
-    
+
     for pool in pools:
         password.append(secrets.choice(pool))
     for _ in range(length - n_types):
