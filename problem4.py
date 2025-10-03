@@ -2,6 +2,7 @@
 Problem 4: File Word Counter
 Process text files and perform various analyses.
 """
+import string
 
 def create_sample_file(filename="sample.txt"):
     """
@@ -15,7 +16,7 @@ It is widely used in web development, data science, and automation.
 Python's simple syntax makes it great for beginners.
 Many companies use Python for their projects."""
 
-    with open(filename, 'w') as f:
+    with open(filename, 'w', encoding='utf-8') as f:
         f.write(content)
     print(f"Created {filename}")
 
@@ -31,12 +32,12 @@ def count_words(filename):
         int: Total number of words
     """
     total=0
-    with open(filename, 'r', encoding='uft-8') as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         for line in f:
             total += len(line.split())
     return total
-            
-    
+
+
 
 
 def count_lines(filename):
@@ -49,7 +50,7 @@ def count_lines(filename):
     Returns:
         int: Total number of lines
     """
-   with open(filename, 'r', encoding='utf-8') as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         return sum(1 for _ in f)
 
 
@@ -64,7 +65,7 @@ def count_characters(filename, include_spaces=True):
     Returns:
         int: Total number of characters
     """
-   with open(filename, 'r', encoding='utf-8') as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         text = f.read()
     if include_spaces:
         return len(text)
@@ -81,7 +82,6 @@ def find_longest_word(filename):
     Returns:
         str: The longest word found
     """
-    import string
     longest = ""
     table = str.maketrans({p: " " for p in string.punctuation})
     with open(filename, 'r', encoding='utf-8') as f:
@@ -103,7 +103,6 @@ def word_frequency(filename):
     Returns:
         dict: Dictionary with words as keys and frequencies as values
     """
-    import string
 
     frequency = {}
     table = str.maketrans({p: " " for p in string.punctuation})
@@ -143,7 +142,7 @@ def analyze_file(filename):
 
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found!")
-    except Exception as e:
+    except ImportError as e:
         print(f"Error: {e}")
 
 
