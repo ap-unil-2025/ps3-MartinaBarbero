@@ -15,8 +15,6 @@ def create_sample_file(filename="sample.txt"):
 It is widely used in web development, data science, and automation.
 Python's simple syntax makes it great for beginners.
 Many companies use Python for their projects."""
-
-
     with open (filename, 'w', encoding='utf-8') as f:
         f.write(content)
     print(f"Created {filename}")
@@ -101,7 +99,6 @@ def word_frequency(filename):
     Returns:
         dict: Dictionary with words as keys and frequencies as values
     """
-
     frequency = {}
     table = str.maketrans({p: " " for p in string.punctuation})
     with open(filename, 'r', encoding='utf-8') as f:
