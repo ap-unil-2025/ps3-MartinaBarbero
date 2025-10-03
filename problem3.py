@@ -23,7 +23,7 @@ def get_numbers_from_user():
             num = float(user_input)
             numbers.append(num)
         except ValueError:
-            print("Invalid input. Please enter a number or 'done'.")    
+            print("Invalid input. Please enter a number or 'done'.")
     return numbers
 
 
@@ -57,7 +57,7 @@ def analyze_numbers(numbers):
     odd_count = sum(1 for n in numbers if n.is_integer() and int(n) % 2 != 0)
     analysis["even_count"] = even_count
     analysis["odd_count"] = odd_count
-    
+
     return analysis
 
 
@@ -80,8 +80,6 @@ def display_analysis(analysis):
     print(f"Maximum: {analysis['maximum']}")
     print(f"Even numbers: {analysis['even_count']}")
     print(f"Odd numbers: {analysis['odd_count']}")
-    
-
 
 def main():
     """Main function to run the number analyzer."""
