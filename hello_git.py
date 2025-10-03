@@ -1,1 +1,2 @@
-
+'example'
+print ("hello world")
